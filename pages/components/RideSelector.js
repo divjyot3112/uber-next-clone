@@ -13,7 +13,7 @@ const RideSelector = ({ pickupCoordinates, dropoffCoordinates }) => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                setRideDuration(data.routes && data.routes[0].duration / 100)
+                setRideDuration(data.routes && data.routes[0]?.duration / 100)
             })
     }, [pickupCoordinates, dropoffCoordinates])
 

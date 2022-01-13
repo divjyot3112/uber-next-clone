@@ -16,7 +16,7 @@ export default function Home() {
       if (user) {
         setUser({
           name: user.displayName,
-          photoUrl: user.photoUrl
+          photoUrl: user.photoURL
         })
       } else {
         setUser(null)
@@ -34,7 +34,10 @@ export default function Home() {
           {/* Image(UberLogo) */}
           <UberLogo src='https://i.ibb.co/84stgjq/uber-technologies-new-20218114.jpg' /> 
           <Profile>
-            <Name>{user && user.name}</Name>
+            <Name>
+              {user && user.name}
+              {/* {user && user.photoUrl} */}
+            </Name>
             <UserImage
               src={user && user.photoUrl}
               onClick={() => signOut(auth)}
