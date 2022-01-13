@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import tw from 'tailwind-styled-components'
-import { carList } from '../data/carList'
+import { carList } from '../../data/carList'
 
 const RideSelector = ({ pickupCoordinates, dropoffCoordinates }) => {
 
@@ -13,7 +13,7 @@ const RideSelector = ({ pickupCoordinates, dropoffCoordinates }) => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                setRideDuration(data?.routes[0]?.duration / 100)
+                setRideDuration(data.routes && data.routes[0].duration / 100)
             })
     }, [pickupCoordinates, dropoffCoordinates])
 
